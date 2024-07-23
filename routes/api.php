@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\HospitalPartnerController;
+use App\Http\Controllers\Api\InapPusatController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::apiResource('hospital_partners', HospitalPartnerController::class);
-
+Route::apiResource('inap_pusat', InapPusatController::class);

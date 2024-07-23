@@ -11,9 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('topup_pusats', function (Blueprint $table) {
+        Schema::create('topup_pusat', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('kode_spesial');
+            $table->string('deskripsi');
+            $table->string('kode');
+            $table->string('kelas');
+            $table->string('rscm');
+            $table->string('rsjp_hk');
+            $table->string('rsab_hk');
+            $table->string('rsk');
+            $table->string('rspon');
         });
     }
 
@@ -22,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('topup_pusats');
+        Schema::dropIfExists('topup_pusat');
     }
 };

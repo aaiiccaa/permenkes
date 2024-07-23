@@ -11,9 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('topup_umums', function (Blueprint $table) {
+        Schema::create('topup_umum', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('kode_spesial');
+            $table->string('deskripsi');
+            $table->string('kode');
+            $table->string('kelas_rawat');
+            $table->string('kelas_a');
+            $table->string('kelas_b');
+            $table->string('kelas_c');
+            $table->string('kelas_d');
+            $table->string('regional');
+            $table->string('kategori');
         });
     }
 
@@ -22,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('topup_umums');
+        Schema::dropIfExists('topup_umum');
     }
 };

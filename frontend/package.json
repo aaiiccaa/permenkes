@@ -15,9 +15,12 @@
     "@mui/icons-material": "^5.16.4",
     "@mui/material": "^5.16.4",
     "axios": "^1.7.2",
+    "lodash": "^4.17.21",
     "react": "^18.3.1",
+    "react-autosuggest": "^10.1.0",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.25.1"
+    "react-router-dom": "^6.25.1",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.19.2/xlsx-0.19.2.tgz"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

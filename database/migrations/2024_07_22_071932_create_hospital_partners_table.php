@@ -15,9 +15,9 @@ class CreateHospitalPartnersTable extends Migration
             $table->string('alamat');
             $table->string('telepon');
             $table->string('pemilik');
+            $table->string('status');
             $table->string('kelas');
             $table->string('regional');
-            $table->timestamps();
         });
     }
 

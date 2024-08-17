@@ -23,7 +23,7 @@ class InapPusatController extends Controller
     public function store(Request $request)
 {
     $request->validate([
-        'kode' => 'required|string|max:255|unique:inap_pusat',
+        'kode' => 'required|string|max:255',
         'deskripsi' => 'required|string|max:255',
         'tarif_3' => 'required|numeric',
         'tarif_2' => 'required|numeric',
@@ -41,7 +41,7 @@ public function update(Request $request, $id)
     $inapPusat = InapPusat::findOrFail($id);
 
     $request->validate([
-        'kode' => 'sometimes|required|string|max:255|unique:inap_pusat,kode,' . $id,
+        'kode' => 'sometimes|required|string|max:255',
         'deskripsi' => 'sometimes|required|string|max:255',
         'tarif_3' => 'sometimes|required|numeric',
         'tarif_2' => 'sometimes|required|numeric',
@@ -59,5 +59,25 @@ public function update(Request $request, $id)
         $inapPusat = InapPusat::findOrFail($id);
         $inapPusat->delete();
         return response()->json(null, 204);
+    }
+
+    public function searchInapPusat(Request $request)
+    {
+        $query = InapPusat::query();
+
+        if ($request->has('rs')) {
+            $query->where('rumah_sakit', 'LIKE', '%' . $request->input('rs') . '%');
+        }
+
+        if ($request->has('kode')) {
+            $query->where('kode', 'LIKE', '%' . $request->input('kode') . '%');
+        }
+
+        if ($request->has('deskripsi')) {
+            $query->where('deskripsi', 'LIKE', '%' . $request->input('deskripsi') . '%');
+        }
+
+        $inapPusat = $query->get();
+        return response()->json($inapPusat);
     }
 }

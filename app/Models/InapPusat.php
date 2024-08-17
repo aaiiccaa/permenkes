@@ -20,5 +20,5 @@ class InapPusat extends Model
         'rumah_sakit',
     ];
 
-    public $timestamps = true;
+    public $timestamps = false;
 }

@@ -19,7 +19,9 @@ class HospitalPartner extends Model
         'pemilik',
         'kelas',
         'regional',
+        'status',
+        'kategori',
     ];
 
-    public $timestamps = true;
+    public $timestamps = false;
 }
